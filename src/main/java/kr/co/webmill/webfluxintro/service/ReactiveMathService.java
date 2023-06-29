@@ -16,7 +16,7 @@ public class ReactiveMathService {
         return Flux.range(1, 10)
                 .doOnNext(i -> SleepUtil.sleepSeconds(1))
                 .doOnNext(i -> System.out.println("reactive-math-service is processing: " + i))
-                .map(new Response(i * input));
+                .map(i -> new Response(i * input));
 
     }
 }
